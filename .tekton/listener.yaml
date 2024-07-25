@@ -6,19 +6,19 @@ spec:
   params:
       description: The message to print
       default: This is the default message
-      resourcetemplates:
-      - apiVersion: tekton.dev/v1beta1
-        kind: PipelineRun
-        metadata:
-          generateName: run-$(uid)
-          labels:
-            triggertemplated: "true"
-            generatedBy: "triggers-example"
-        spec:
-          pipelineRef:
-            name: kick-it-pipeline
+  resourcetemplates:
+    - apiVersion: tekton.dev/v1beta1
+      kind: PipelineRun
+      metadata:
+        generateName: run-$(uid)
+        labels:
+          triggertemplated: "true"
+          generatedBy: "triggers-example"
+      spec:
+        pipelineRef:
+          name: kick-it-pipeline
 ---
-apiVersion: tekton.dev/v1alpha1
+apiVersion: tekton.dev/v1beta1
 kind: TriggerBinding
 metadata:
   name: simple-binding
