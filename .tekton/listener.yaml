@@ -3,9 +3,6 @@ kind: TriggerTemplate
 metadata:
   name: pipeline-template
 spec:
-  params:
-      description: The message to print
-      default: This is the default message
   resourcetemplates:
     - apiVersion: tekton.dev/v1beta1
       kind: PipelineRun
