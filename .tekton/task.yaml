@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: script-runner
+spec:
+  steps:
+    - name: disk-info
+      image: alpine
+      command: ["bash", "-c"]
+      args:
+        - echo 'Getting some info';
+          uname -a;
+          whoami;
+          pwd;
+          ls -al;
+          df -Th;
+          ls -al /dev;
+          ls -alR /var/run/secrets;
+          df -h;

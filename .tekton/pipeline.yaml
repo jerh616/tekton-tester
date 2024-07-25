@@ -1,0 +1,9 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: kick-it-pipeline
+spec:
+  tasks:
+    - name: tester
+      taskRef:
+        name: script-runner
