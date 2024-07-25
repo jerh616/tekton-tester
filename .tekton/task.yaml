@@ -3,6 +3,9 @@ kind: Task
 metadata:
   name: script-runner
 spec:
+  params:
+    name: message
+    value: ${params.message}
   steps:
     - name: disk-info
       image: alpine

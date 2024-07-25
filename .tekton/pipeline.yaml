@@ -3,7 +3,13 @@ kind: Pipeline
 metadata:
   name: kick-it-pipeline
 spec:
+  params:
+    - name: message
+      description: Message of the day
   tasks:
     - name: tester
       taskRef:
         name: script-runner
+      params:
+        - name: message
+          value: $(params.message)
