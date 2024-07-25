@@ -1,4 +1,4 @@
-apiVersion: tekton.dev/v1
+apiVersion: tekton.dev/v1beta1
 kind: TriggerTemplate
 metadata:
   name: pipeline-template
@@ -7,7 +7,7 @@ spec:
       description: The message to print
       default: This is the default message
       resourcetemplates:
-      - apiVersion: tekton.dev/v1
+      - apiVersion: tekton.dev/v1beta1
         kind: PipelineRun
         metadata:
           generateName: run-$(uid)
@@ -25,7 +25,7 @@ metadata:
 spec:
   params: []            
 ---
-apiVersion: tekton.dev/v1
+apiVersion: tekton.dev/v1beta1
 kind: EventListener
 metadata:
   name: manual-listener
